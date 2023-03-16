@@ -33,6 +33,7 @@ android {
             isShrinkResources = false
             isCrunchPngs = false
             extra["alwaysUpdateBuildId"] = false
+            buildConfigField("String", "BASE_URL", project.properties["base_url"].toString())
         }
 
         release {
@@ -41,6 +42,7 @@ android {
             isShrinkResources = true
             isCrunchPngs = true
             versionNameSuffix = "-${System.currentTimeMillis()}"
+            buildConfigField("String", "BASE_URL", project.properties["base_url"].toString())
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
@@ -102,6 +104,9 @@ android {
 
         implementation("io.coil-kt:coil-compose:2.0.0-rc02")
         implementation("net.zetetic:android-database-sqlcipher:4.5.0")
+
+        implementation("com.github.bumptech.glide:glide:4.15.0")
+        kapt("com.github.bumptech.glide:compiler:4.15.0")
 
         implementation("org.jetbrains.kotlin:kotlin-stdlib:1.7.0")
 
