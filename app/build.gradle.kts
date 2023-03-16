@@ -4,17 +4,16 @@ plugins {
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
     id("de.mannodermaus.android-junit5")
-    id("com.google.gms.google-services")
     id("io.gitlab.arturbosch.detekt").version("1.21.0-RC1")
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.example.simpleviralgames"
         minSdk = 24
-        targetSdk = 32
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0.0"
 
@@ -78,33 +77,33 @@ android {
     }
 
     dependencies {
-        implementation("androidx.core:core-ktx:1.9.0")
-        implementation("androidx.appcompat:appcompat:1.6.1")
-        implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-        implementation("androidx.compose.ui:ui-tooling:1.3.3")
-        implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
-        implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
-        implementation("androidx.compose.ui:ui:1.3.3")
-        implementation("androidx.compose.ui:ui-util:1.3.3")
-        implementation("androidx.compose.foundation:foundation:1.3.1")
-        implementation("androidx.compose.material3:material3:1.1.0-alpha08")
-        implementation("androidx.compose.material3:material3-window-size-class:1.1.0-alpha08")
-        implementation("androidx.compose.material:material-icons-core:1.3.1")
-        implementation("androidx.compose.material:material-icons-extended:1.3.1")
-        implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
-        implementation("androidx.navigation:navigation-compose:2.5.3")
+        implementation("androidx.core:core-ktx:1.7.0")
+        implementation("androidx.appcompat:appcompat:1.4.1")
+        implementation("androidx.constraintlayout:constraintlayout:2.1.3")
+        implementation("androidx.compose.ui:ui-tooling:1.1.1")
+        implementation("androidx.navigation:navigation-fragment-ktx:2.4.1")
+        implementation("androidx.navigation:navigation-ui-ktx:2.4.1")
+        implementation("androidx.compose.ui:ui:1.1.1")
+        implementation("androidx.compose.ui:ui-util:1.1.1")
+        implementation("androidx.compose.foundation:foundation:1.2.0")
+        implementation("androidx.compose.material3:material3:1.0.0-alpha15")
+        implementation("androidx.compose.material3:material3-window-size-class:1.0.0-alpha15")
+        implementation("androidx.compose.material:material-icons-core:1.2.0")
+        implementation("androidx.compose.material:material-icons-extended:1.2.0")
+        implementation("androidx.constraintlayout:constraintlayout-compose:1.0.0")
+        implementation("androidx.navigation:navigation-compose:2.5.1")
         implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
-        implementation("androidx.activity:activity-compose:1.6.1")
-        implementation("androidx.room:room-runtime:2.5.0")
-        implementation("androidx.room:room-ktx:2.5.0")
+        implementation("androidx.activity:activity-compose:1.5.1")
+        implementation("androidx.room:room-runtime:2.4.2")
+        implementation("androidx.room:room-ktx:2.4.2")
         implementation("androidx.datastore:datastore-preferences:1.0.0")
-        implementation("androidx.paging:paging-compose:1.0.0-alpha18")
+        implementation("androidx.paging:paging-compose:1.0.0-alpha14")
         implementation("com.google.dagger:hilt-android:2.43")
 
         implementation("io.coil-kt:coil-compose:2.0.0-rc02")
         implementation("net.zetetic:android-database-sqlcipher:4.5.0")
 
-        implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
+        implementation("org.jetbrains.kotlin:kotlin-stdlib:1.7.0")
 
         implementation("com.squareup.retrofit2:retrofit:2.9.0")
         implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
@@ -119,7 +118,7 @@ android {
         detektPlugins("ru.kode:detekt-rules-compose:1.0.1")
 
         kapt("com.google.dagger:hilt-compiler:2.43")
-        kapt("androidx.room:room-compiler:2.5.0")
+        kapt("androidx.room:room-compiler:2.4.2")
         kapt("com.squareup.moshi:moshi-kotlin-codegen:1.13.0")
 
         testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
@@ -127,7 +126,7 @@ android {
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
         testImplementation("io.mockk:mockk:1.12.4")
 
-        implementation("androidx.compose.ui:ui-test-junit4:1.3.3")
+        implementation("androidx.compose.ui:ui-test-junit4:1.1.1")
     }
 }
 
