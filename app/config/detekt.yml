@@ -1,0 +1,69 @@
+style:
+  NewLineAtEndOfFile:
+    active: false
+  WildcardImport:
+    active: false
+  UnusedPrivateMember:
+    active: true
+    ignoreAnnotated:
+      - "androidx.compose.runtime.Composable"
+      - "androidx.compose.ui.tooling.preview.Preview"
+  MaxLineLength:
+    active: true
+  MagicNumber:
+    active: true
+
+formatting:
+  FinalNewline:
+    active: false
+    autoCorrect: true
+  NoWildcardImports:
+    active: true
+  ImportOrdering:
+    active: false
+  Indentation:
+    indentSize: 4
+    continuationIndentSize: 8
+    active: true
+    autoCorrect: true
+  MaximumLineLength:
+    active: false
+
+complexity:
+  TooManyFunctions:
+    thresholdInFiles: 20
+
+  LongParameterList:
+    active: true
+    functionThreshold: 7
+    constructorThreshold: 7
+    ignoreDefaultParameters: false
+    ignoreDataClasses: true
+    ignoreAnnotated:
+      - "androidx.compose.runtime.Composable"
+
+  LongMethod:
+    active: true
+    threshold: 60
+    ignoreAnnotated:
+      - "androidx.compose.runtime.Composable"
+
+naming:
+  FunctionNaming:
+    active: true
+    ignoreAnnotated:
+      - "androidx.compose.runtime.Composable"
+
+compose:
+  ReusedModifierInstance:
+    active: true
+  UnnecessaryEventHandlerParameter:
+    active: true
+  ComposableEventParameterNaming:
+    active: true
+  ModifierHeightWithText:
+    active: true
+  ModifierParameterPosition:
+    active: true
+  PublicComposablePreview:
+    active: true
