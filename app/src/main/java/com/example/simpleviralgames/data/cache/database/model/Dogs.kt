@@ -8,6 +8,6 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class Dogs(
     @PrimaryKey
-    val timeStamp: Int,
+    val timeStamp: Long,
     val imageUrl: String
 )

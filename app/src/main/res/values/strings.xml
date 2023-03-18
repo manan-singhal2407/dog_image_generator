@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SimpleViralGames</string>
+    <string name="back_text">Back</string>
+    <string name="home_screen_text">Random Dog Generator!</string>
+    <string name="generate_dogs_screen_text">Generate Dogs!</string>
+    <string name="preview_dogs_screen_text">My Recently Generated Dogs!</string>
+    <string name="generate_dogs_button_text">Generate!</string>
+    <string name="preview_dogs_button_text">Clear Dogs!</string>
 </resources>

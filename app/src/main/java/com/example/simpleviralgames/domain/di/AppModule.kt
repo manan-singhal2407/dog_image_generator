@@ -2,7 +2,6 @@ package com.example.simpleviralgames.domain.di
 
 import android.content.Context
 import com.example.simpleviralgames.domain.SimpleViralGames
-import com.example.simpleviralgames.presentation.base.navigation.Navigator
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -27,8 +26,4 @@ object AppModule {
     @Singleton
     @Provides
     fun provideMoshi(): Moshi = Moshi.Builder().build()
-
-    @Singleton
-    @Provides
-    fun provideNavigator(): Navigator = Navigator()
 }
