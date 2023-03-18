@@ -71,7 +71,7 @@ fun PreviewDogsScreen(
                                 viewModel.dogsList[index].imageData.size
                             ).asImageBitmap(),
                             contentDescription = null,
-                            contentScale = ContentScale.Crop
+                            contentScale = ContentScale.FillBounds
                         )
                     }
                 }

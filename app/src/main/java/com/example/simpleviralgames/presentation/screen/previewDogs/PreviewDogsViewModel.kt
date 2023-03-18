@@ -1,6 +1,5 @@
 package com.example.simpleviralgames.presentation.screen.previewDogs
 
-import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -25,7 +24,6 @@ class PreviewDogsViewModel @Inject constructor(
         previewDogsRepository.getCachedDogImage().onEach { dataState ->
             dataState.data?.let { response ->
                 dogsList.addAll(response)
-                Log.e("Manan", dogsList.size.toString())
             }
             dataState.error?.let {
             }
