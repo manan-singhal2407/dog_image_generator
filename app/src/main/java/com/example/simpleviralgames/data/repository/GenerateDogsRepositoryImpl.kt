@@ -17,7 +17,14 @@ class GenerateDogsRepositoryImpl @Inject constructor(
         emit(DataState.loading())
         val generateDogsResponse = generateDogsService.getDogImage()
         emit(DataState.success(generateDogsResponse))
-        dogsDao.insertNewDogImage(Dogs(System.currentTimeMillis(), generateDogsResponse.message))
+    }.catch {
+        emit(DataState.error(it.message ?: "Unknown Error"))
+    }
+
+    override fun saveDogImageToRoom(dogs: Dogs) = flow {
+        dogsDao.insertNewDogImage(dogs)
+        dogsDao.clearImagesAfter20Entries()
+        emit(DataState.success(true))
     }.catch {
         emit(DataState.error(it.message ?: "Unknown Error"))
     }

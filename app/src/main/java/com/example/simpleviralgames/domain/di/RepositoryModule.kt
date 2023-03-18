@@ -3,7 +3,9 @@ package com.example.simpleviralgames.domain.di
 import com.example.simpleviralgames.data.cache.database.dao.DogsDao
 import com.example.simpleviralgames.data.network.service.GenerateDogsService
 import com.example.simpleviralgames.data.repository.GenerateDogsRepositoryImpl
+import com.example.simpleviralgames.data.repository.PreviewDogsRepositoryImpl
 import com.example.simpleviralgames.domain.repository.GenerateDogsRepository
+import com.example.simpleviralgames.domain.repository.PreviewDogsRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,6 +24,16 @@ object RepositoryModule {
     ): GenerateDogsRepository {
         return GenerateDogsRepositoryImpl(
             generateDogsService = generateDogsService,
+            dogsDao = dogsDao
+        )
+    }
+
+    @ViewModelScoped
+    @Provides
+    fun providePreviewDogsRepository(
+        dogsDao: DogsDao
+    ): PreviewDogsRepository {
+        return PreviewDogsRepositoryImpl(
             dogsDao = dogsDao
         )
     }

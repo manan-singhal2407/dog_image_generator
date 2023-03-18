@@ -15,8 +15,8 @@ interface DogsDao {
     fun getDogsImages(): Flow<List<Dogs>>
 
     @Query("DELETE FROM Dogs WHERE timeStamp NOT IN (SELECT timeStamp FROM Dogs ORDER BY timeStamp DESC LIMIT 20)")
-    fun clearImagesAfter20Entities()
+    suspend fun clearImagesAfter20Entries()
 
     @Query("DELETE FROM Dogs")
-    fun clearAllImages()
+    suspend fun clearAllImages()
 }

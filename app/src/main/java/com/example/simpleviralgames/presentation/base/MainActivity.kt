@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.simpleviralgames.presentation.base.navigation.Screen
 import com.example.simpleviralgames.presentation.screen.generateDogs.GenerateDogsScreen
 import com.example.simpleviralgames.presentation.screen.home.HomeScreen
+import com.example.simpleviralgames.presentation.screen.previewDogs.PreviewDogsScreen
 import com.example.simpleviralgames.presentation.theme.SimpleViralGamesTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -29,6 +30,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable(Screen.GenerateDogs.route) {
                         GenerateDogsScreen(navController = navController, viewModel = hiltViewModel())
+                    }
+                    composable(Screen.PreviewDogs.route) {
+                        PreviewDogsScreen(navController = navController, viewModel = hiltViewModel())
                     }
                 }
             }
