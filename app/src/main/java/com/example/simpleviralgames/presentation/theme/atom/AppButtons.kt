@@ -4,12 +4,12 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.simpleviralgames.presentation.theme.AppShapes
+import com.example.simpleviralgames.presentation.theme.AppTypography
 import com.example.simpleviralgames.presentation.theme.height36dp
 import com.example.simpleviralgames.presentation.theme.padding24dp
 import com.example.simpleviralgames.presentation.theme.padding8dp
@@ -46,7 +46,7 @@ fun PrimaryButton(
     ) {
         Text(
             text = label,
-            style = MaterialTheme.typography.titleSmall,
+            style = AppTypography.titleSmall,
             color = if (enabled) White else DisabledColor
         )
     }

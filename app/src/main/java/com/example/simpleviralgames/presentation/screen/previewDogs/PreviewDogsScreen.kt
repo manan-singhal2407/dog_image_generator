@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -24,9 +25,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.simpleviralgames.R
+import com.example.simpleviralgames.presentation.theme.DisabledColor
 import com.example.simpleviralgames.presentation.theme.White
 import com.example.simpleviralgames.presentation.theme.atom.PrimaryAppBar
 import com.example.simpleviralgames.presentation.theme.atom.PrimaryButton
+
+private val ImageMarginToScreen = 40.dp
+private val DividerPaddingTop = 50.dp
+private val DividerHeight = 0.4.dp
+private val SpaceBetweenImageAndButton = 50.dp
+private val HorizontalSpaceBetweenImages = 12.dp
+private val ContentPaddingTop = 100.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -36,6 +45,7 @@ fun PreviewDogsScreen(
 ) {
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp.dp
+    val imageWidth = screenWidth - ImageMarginToScreen
 
     Scaffold(
         topBar = {
@@ -52,19 +62,26 @@ fun PreviewDogsScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(color = White)
-                .padding(top = 100.dp),
+                .background(color = White),
             horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Top
         ) {
+            Divider(
+                modifier = Modifier
+                    .padding(top = DividerPaddingTop)
+                    .height(DividerHeight)
+                    .background(color = DisabledColor)
+            )
             if (viewModel.dogsList.size != 0) {
                 LazyRow(
-                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                    modifier = Modifier.padding(top = ContentPaddingTop),
+                    horizontalArrangement = Arrangement.spacedBy(HorizontalSpaceBetweenImages)
                 ) {
                     items(count = viewModel.dogsList.size) { index ->
                         Image(
                             modifier = Modifier
-                                .width(screenWidth - 40.dp)
-                                .height(screenWidth - 40.dp),
+                                .width(imageWidth)
+                                .height(imageWidth),
                             bitmap = BitmapFactory.decodeByteArray(
                                 viewModel.dogsList[index].imageData,
                                 0,
@@ -78,11 +95,12 @@ fun PreviewDogsScreen(
             } else {
                 Box(
                     modifier = Modifier
-                        .width(screenWidth - 40.dp)
-                        .height(screenWidth - 40.dp)
+                        .width(imageWidth)
+                        .height(imageWidth)
+                        .padding(top = ContentPaddingTop)
                 )
             }
-            Spacer(modifier = Modifier.height(50.dp))
+            Spacer(modifier = Modifier.height(SpaceBetweenImageAndButton))
             PrimaryButton(
                 label = String.format(
                     stringResource(id = R.string.preview_dogs_button_text)

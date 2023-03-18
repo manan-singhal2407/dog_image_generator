@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -17,9 +16,12 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.simpleviralgames.R
 import com.example.simpleviralgames.presentation.base.navigation.Screen
+import com.example.simpleviralgames.presentation.theme.AppTypography
 import com.example.simpleviralgames.presentation.theme.Black
 import com.example.simpleviralgames.presentation.theme.White
 import com.example.simpleviralgames.presentation.theme.atom.PrimaryButton
+
+private val SpaceBetweenNameAndButton = 200.dp
 
 @Composable
 fun HomeScreen(
@@ -36,11 +38,11 @@ fun HomeScreen(
             text = String.format(
                 stringResource(id = R.string.home_screen_text)
             ),
-            style = MaterialTheme.typography.titleMedium,
+            style = AppTypography.titleMedium,
             color = Black,
             textAlign = TextAlign.Center
         )
-        Spacer(modifier = Modifier.height(200.dp))
+        Spacer(modifier = Modifier.height(SpaceBetweenNameAndButton))
         PrimaryButton(
             label = String.format(
                 stringResource(id = R.string.generate_dogs_screen_text)
